@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
 		<script>
 			function mage() {
 			const xhr1 = new XMLHttpRequest();
-			xhr1.open('GET', '/my-api', true);
+			xhr1.open('GET', '/', true);
 			xhr1.onload = function() {
 				const result = document.getElementId('result');
 				result.innerHTML = this.responseText;
@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
 //response
 
 server.on('request', (req, res) => {
-	if (req.url === '/my-api') {
+	if (req.url === '/') {
 		res.writeHead(200, {'Content-Type':'text/plain' });
 		res.write('You chose Mage!');
 		res.end();
